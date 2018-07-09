@@ -6,7 +6,7 @@
     type="search"
     class="form-search"
     placeholder="Example: crisgon"
-    @change="getUser(userName)"
+    @search="getUser(userName)"
     v-model="userName"
     >
   </form>
