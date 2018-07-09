@@ -1,30 +1,32 @@
 <template>
-  <div class="repositories">
-    <div class="back">
-      <router-link to="/">Back</router-link>
-    </div>
-    <div v-for="(repositorie, index) in repositories" :key="index" class="repositorie">
-      <h3 v-text="repositorie.name"></h3>
-      <p v-text="repositorie.description"></p>
-      <div class="info">
-        <span class="info-single info-stars">
-          {{ repositorie.stargazers_count }} stars
-        </span>
-        <span class="info-single info-issues">
-          {{ repositorie.open_issues }} issues
-        </span>
-        <span class="info-single info-forks">
-          {{ repositorie.forks }} forks
-        </span>
-        <span v-if="repositorie.language" class="info-single info-lang">
-          Language: {{ repositorie.language }}
-        </span>
+  <transition name="fade">
+    <div class="repositories">
+      <div class="back">
+        <router-link to="/">Back</router-link>
       </div>
-      <a :href="repositorie.svn_url" target="_blank">
-        <Btn>View Repo</Btn>
-      </a>
+      <div v-for="(repositorie, index) in repositories" :key="index" class="repositorie">
+        <h3 v-text="repositorie.name"></h3>
+        <p v-text="repositorie.description"></p>
+        <div class="info">
+          <span class="info-single info-stars">
+            {{ repositorie.stargazers_count }} stars
+          </span>
+          <span class="info-single info-issues">
+            {{ repositorie.open_issues }} issues
+          </span>
+          <span class="info-single info-forks">
+            {{ repositorie.forks }} forks
+          </span>
+          <span v-if="repositorie.language" class="info-single info-lang">
+            Language: {{ repositorie.language }}
+          </span>
+        </div>
+        <a :href="repositorie.svn_url" target="_blank">
+          <Btn>View Repo</Btn>
+        </a>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -111,5 +113,12 @@ export default {
         text-decoration: none;
       }
     }
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .9s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
   }
 </style>

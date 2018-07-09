@@ -1,20 +1,22 @@
 <template>
-  <div class="users">
-    <div class="user" v-for="(user, index) in users" :key="index">
-    <div class="user-avatar">
-      <img :src="user.avatar_url" alt="Avatar">
+  <transition name="fade">
+    <div class="users">
+      <div class="user" v-for="(user, index) in users" :key="index">
+      <div class="user-avatar">
+        <img :src="user.avatar_url" alt="Avatar">
+      </div>
+      <h2 v-text="user.login"></h2>
+      <div class="user-info">
+        <div class="local" v-text="user.location"></div>
+        <Btn @click.native="showDetails(user.login)">Details</Btn>
+        <router-link to="/repositories">
+          <Btn @click.native="setRepositories(user.login)">Repositories</Btn>
+        </router-link>
+      </div>
     </div>
-    <h2 v-text="user.login"></h2>
-    <div class="user-info">
-      <div class="local" v-text="user.location"></div>
-      <Btn @click.native="showDetails(user.login)">Details</Btn>
-      <router-link to="/repositories">
-        <Btn @click.native="setRepositories(user.login)">Repositories</Btn>
-      </router-link>
+    <popup/>
     </div>
-  </div>
-  <popup/>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -88,5 +90,12 @@ export default {
         }
       }
     }
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .9s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
   }
 </style>
