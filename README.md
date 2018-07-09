@@ -1,7 +1,10 @@
-# github-user-search
+# Github user search
 
-> A Vue.js project
+> A Vue.js projec. This project was made using vue, vuex and vue-router.
 
+https://crisgon.github.io/github-search/dist/
+
+![Gif of project](https://i.imgur.com/todWhK7.gif)
 ## Build Setup
 
 ``` bash
