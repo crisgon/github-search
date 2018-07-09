@@ -1,5 +1,5 @@
 <template>
-  <div class="search-box">
+  <form class="search-box">
     <loader v-if="loader"/>
     <input
     autofocus
@@ -9,7 +9,7 @@
     @change="getUser(userName)"
     v-model="userName"
     >
-  </div>
+  </form>
 </template>
 
 <script>
