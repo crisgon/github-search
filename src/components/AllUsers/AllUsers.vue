@@ -1,6 +1,6 @@
 <template>
   <div class="users">
-    <div class="user" v-for="(user, index) in allUsers" :key="index">
+    <div class="user" v-for="(user, index) in users" :key="index">
     <div class="user-avatar">
       <img :src="user.avatar_url" alt="">
     </div>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import Btn from '@/components/Btn/Btn';
 import Popup from '@/components/Popup/Popup';
 
@@ -28,9 +28,9 @@ export default {
     Popup,
   },
   computed: {
-    ...mapState([
-      'allUsers',
-    ]),
+    ...mapGetters({
+      users: 'getAllUsers',
+    }),
   },
   methods: {
     ...mapActions([

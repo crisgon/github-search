@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <main-header/>
-    <div v-if="allUsers.length === 0">
+    <div v-if="!allUsers.length" class="message">
       No users...
     </div>
     <div v-else>
@@ -33,15 +33,19 @@ export default {
   body {
     background-color: #24292e;
     font-family: 'Ubuntu', sans-serif;
-  }
 
-  #app {
-    width: 100%;
-    box-sizing: border-box;
-    padding: .5em;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    #app {
+      width: 100%;
+      box-sizing: border-box;
+      padding: .5em;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .message {
+        color: #fff;
+      }
+    }
   }
 </style>

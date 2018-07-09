@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 import Btn from '@/components/Btn/Btn';
 
 export default {
@@ -36,9 +36,9 @@ export default {
     Btn,
   },
   computed: {
-    ...mapState([
-      'repositories',
-    ]),
+    ...mapGetters({
+      repositories: 'getRepositories',
+    }),
   },
 };
 </script>

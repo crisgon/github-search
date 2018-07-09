@@ -48,4 +48,10 @@ export default new Vuex.Store({
       context.commit('CLEAR_USER');
     },
   },
+
+  getters: {
+    getAllUsers: state => state.allUsers,
+    getUser: state => state.user,
+    getRepositories: state => state.repositories,
+  },
 });
