@@ -20,7 +20,9 @@
            class="link link-site">
             Site
         </a>
-        <a :href="user.html_url" target="_blank" class="link link-profile">
+        <a :href="user.html_url"
+           target="_blank"
+           class="link link-profile">
           Profile
         </a>
       </div>
@@ -35,7 +37,6 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  props: ['open'],
   computed: {
     ...mapGetters({
       user: 'getUser',
@@ -53,17 +54,17 @@ export default {
   .user-details {
     width: 90%;
     max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: #fff;
     position: fixed;
     top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transform: translateY(-50%);
     box-shadow: 0 0 0 9999px rgba(0,0,0,0.8);
-    border-radius: 10px;
     box-sizing: border-box;
     padding: 1em;
+    border-radius: 10px;
     text-align: center;
 
     .user-avatar {
@@ -97,11 +98,12 @@ export default {
 
     .user-links {
       padding: 1em;
+
       .link {
-        text-decoration: none;
-        padding: 1em;
         position: relative;
+        text-decoration: none;
         color: #0984e3;
+        padding: 1em;
       }
 
       .link-profile:after,
@@ -138,9 +140,10 @@ export default {
     }
   }
 
-   .fade-enter-active, .fade-leave-active {
+  .fade-enter-active, .fade-leave-active {
     transition: all .6s;
   }
+
   .fade-enter, .fade-leave-to {
     opacity: 0;
     transform: translateY(0%);

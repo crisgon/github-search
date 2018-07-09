@@ -52,10 +52,10 @@ export default {
     .repositorie {
       width: 100%;
       max-width: 300px;
+      background-color: #fff;
       box-sizing: border-box;
       padding: 1em;
       margin: .5em;
-      background-color: #fff;
       border-radius: 10px;
 
       .info {
@@ -66,10 +66,10 @@ export default {
         padding: 1em;
 
         .info-single {
+          position: relative;
           min-width: 30%;
           padding: .4em;
           margin: .3em 0;
-          position: relative;
 
           &:after {
             content: '';

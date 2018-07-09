@@ -1,5 +1,5 @@
 <template>
-  <div class="loader hidden"></div>
+  <div class="loader"></div>
 </template>
 
 <script>
@@ -12,10 +12,10 @@ export default {
   .loader {
     width: 100%;
     height: 3px;
+    background-color: #ddd;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #ddd;
 
     &:after, &:before {
       content: "";

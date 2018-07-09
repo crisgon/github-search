@@ -48,23 +48,23 @@ export default {
     .form-search {
       width: 100%;
       max-width: 500px;
+      position: relative;
       border: 0;
       outline: 0;
       border-radius: 47px;
       box-sizing: border-box;
       padding: .8em;
-      box-shadow: 0 12px 15px rgba(0, 0, 0, 0.15);
-      position: relative;
       background-image: url('../../assets/images/search.svg');
       background-size: 30px;
       background-position: 95% 50%;
       background-repeat: no-repeat;
+      box-shadow: 0 12px 15px rgba(0, 0, 0, 0.15);
       transition: all .3s;
 
       &::-webkit-search-cancel-button {
         -webkit-appearance: none;
-        height: 15px;
         width: 15px;
+        height: 15px;
         margin-right: .8em;
         background-image: url('../../assets/images/cancel.svg');
         transition: all .3s;

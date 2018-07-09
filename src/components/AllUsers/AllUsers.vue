@@ -2,7 +2,7 @@
   <div class="users">
     <div class="user" v-for="(user, index) in users" :key="index">
     <div class="user-avatar">
-      <img :src="user.avatar_url" alt="">
+      <img :src="user.avatar_url" alt="Avatar">
     </div>
     <h2 v-text="user.login"></h2>
     <div class="user-info">
@@ -55,15 +55,15 @@ export default {
     .user {
       width: 100%;
       max-width: 300px;
-      box-sizing: border-box;
-      padding: 1em;
-      margin: .5em;
       background-color: #fff;
-      border-radius: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
+      box-sizing: border-box;
+      padding: 1em;
+      margin: .5em;
+      border-radius: 10px;
 
       .user-avatar {
         width: 100px;
@@ -77,6 +77,7 @@ export default {
       .user-info {
         .follows {
           padding: .3em 0;
+
           span {
             padding-right: 1em;
           }

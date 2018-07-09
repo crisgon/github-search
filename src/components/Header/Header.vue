@@ -31,8 +31,9 @@ export default {
       color: #fff;
       font-weight: normal;
     }
+
     .header-logo {
       max-width: 100px;
     }
   }
-</style>s
+</style>
