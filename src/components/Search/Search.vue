@@ -2,6 +2,7 @@
   <div class="search-box">
     <loader v-if="loader"/>
     <input
+    autofocus
     type="search"
     class="form-search"
     placeholder="Example: crisgon"
