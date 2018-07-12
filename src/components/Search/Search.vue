@@ -3,10 +3,10 @@
     <loader v-if="loader"/>
     <input
     autofocus
-    type="search"
+    type="type"
     class="form-search"
     placeholder="Example: crisgon"
-    @search="getUser(userName)"
+    @change="getUser(userName)"
     v-model="userName"
     >
   </div>
